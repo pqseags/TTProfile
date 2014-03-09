@@ -1,0 +1,100 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context=".ViewProfileActivity" >
+	<LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal"
+	    android:background="@color/orange" >
+    	<Button android:id = "@+id/edit_button"
+        	android:layout_width="wrap_content"
+        	android:layout_height="30dp"
+        	android:textSize="12sp"
+        	android:onClick="goToEditInfo"
+        	android:text="Edit"/>
+		<View
+		    android:layout_weight="6"
+  			android:layout_width="0dp"
+  			android:layout_height="10dp" />
+		<Button 
+	        android:layout_width="wrap_content"
+        	android:layout_height="30dp"
+        	android:textSize="12sp"
+        	android:onClick="sendProfileForMatching"
+        	android:text="Send Profile!"/>
+
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+        <ImageView
+            android:id="@+id/user_image"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/user" />
+        <TextView
+            android:layout_toRightOf="@+id/user_image"
+            android:id="@+id/nameDisplay"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Input Name Here"
+            android:textSize="28sp" 
+            android:paddingTop = "20dp"
+            android:paddingLeft="15dp"/>
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+        <TextView android:id="@+id/emailField"
+            android:layout_weight = "1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text = "email@usc.edu"/>
+ 		<TextView android:id="@+id/phoneNumberField"
+ 		    android:layout_weight = "1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+ 		    android:text = "(XXX) XXX-XXX"/>
+    </LinearLayout>
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+   		android:text="Degree:"
+   		android:textSize="20dp"
+   		android:layout_marginTop="15dp"/>
+    <TextView android:id="@+id/degreeField"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="School: Blah in BlahBlah"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"/>
+    <RelativeLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+ 		android:layout_marginLeft="30dp"
+ 		android:layout_marginTop="10dp">
+        <TextView android:id="@+id/graduationField"
+        	android:layout_height="wrap_content"
+        	android:layout_width="wrap_content"
+        	android:gravity="center"
+        	android:text="Ex. Grad: xxx. 20XX"/>
+        <TextView android:id="@+id/gpaField"
+            android:layout_toRightOf="@+id/graduationField"
+            android:layout_height="wrap_content"
+        	android:layout_width="fill_parent"
+        	android:gravity="center"
+        	android:text="GPA: x.xxx"/>
+	</RelativeLayout>     	
+
+</LinearLayout>
