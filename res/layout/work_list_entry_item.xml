@@ -15,7 +15,7 @@
 			    android:layout_height = "wrap_content"
 			  	android:layout_width = "0dp"
 			   	android:text="Company"/>
-			<EditText 
+			<EditText android:id = "@+id/companyNameField"
 			 	android:layout_weight = "2"
 			    android:layout_height = "wrap_content"
 			  	android:layout_width = "0dp"/>
@@ -24,7 +24,7 @@
 			    android:layout_height = "wrap_content"
 			  	android:layout_width = "0dp"
 			   	android:text="Position"/>
-			<EditText 
+			<EditText android:id="@+id/positionField"
 			 	android:layout_weight = "2"
 			    android:layout_height = "wrap_content"
 			  	android:layout_width = "0dp"/>

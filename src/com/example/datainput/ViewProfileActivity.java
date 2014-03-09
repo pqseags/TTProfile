@@ -5,13 +5,18 @@ import com.example.datainput.Degree.DegreeLevel;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
 
 public class ViewProfileActivity extends Activity {
 
+	private ViewGroup skillContainerView;
+	private ViewGroup jobContainerView;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -74,6 +79,23 @@ public class ViewProfileActivity extends Activity {
 		gpaDisplay.setText(sb4.toString());
 
 		
+	//display Skills
+		skillContainerView = (ViewGroup) findViewById(R.id.skillContainer);
+		for(Skill s : Profile.getInstance().getSkills()){
+			final ViewGroup newView = (ViewGroup) LayoutInflater.from(this).inflate(R.layout.job_view_item, skillContainerView, false);
+			((TextView) newView.findViewById(R.id.skillNameField)).setText(s.skillName);
+			((TextView) newView.findViewById(R.id.skillRatingField)).setText(Integer.toString(s.rating));
+			skillContainerView.addView(newView, 0);
+		}
+		
+	//display jobs
+		jobContainerView=(ViewGroup)findViewById(R.id.jobContainer);
+		for(WorkExperience w : Profile.getInstance().getJobs()){
+			final ViewGroup newView = (ViewGroup) LayoutInflater.from(this).inflate(R.layout.work_view_item, jobContainerView, false);
+			((TextView) newView.findViewById(R.id.companyNameDisplay)).setText(w.company);
+			((TextView) newView.findViewById(R.id.positionDisplay)).setText(w.position);
+			jobContainerView.addView(newView, 0);
+		}
 		
 	}
 	

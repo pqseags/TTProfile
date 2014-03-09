@@ -32,9 +32,11 @@ public class Profile {
 	
 	public ArrayList<Skill> getSkills(){return skills;}
 	public void addSkill(Skill s){skills.add(s);}
+	public void emptySkills(){skills = new ArrayList<Skill>();}
 	
 	public ArrayList<WorkExperience> getJobs(){return jobs;}
 	public void addJob(WorkExperience j){jobs.add(j);}
+	public void emptyJobs(){jobs = new ArrayList<WorkExperience>();}
 	
 	
 

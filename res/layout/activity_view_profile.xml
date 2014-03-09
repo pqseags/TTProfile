@@ -95,6 +95,40 @@
         	android:layout_width="fill_parent"
         	android:gravity="center"
         	android:text="GPA: x.xxx"/>
-	</RelativeLayout>     	
+	</RelativeLayout>  
+	
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+   		android:text="Skills:"
+   		android:textSize="20dp"
+   		android:layout_marginTop="15dp"/>
+    
+    <ScrollView android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    	<LinearLayout android:id="@+id/skillContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:animateLayoutChanges="true" />
+    </ScrollView>	
+    
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+   		android:text="Work Experience:"
+   		android:textSize="20dp"
+   		android:layout_marginTop="15dp"/>
+    
+    <ScrollView android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    	<LinearLayout android:id="@+id/jobContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:animateLayoutChanges="true" />
+    </ScrollView>	
 
 </LinearLayout>

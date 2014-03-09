@@ -16,6 +16,7 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 //import android.widget.Toast;
 //import android.content.Context;
+import android.widget.TextView;
 
 
 
@@ -24,6 +25,7 @@ public class MainActivity extends Activity {
 	
 	Spinner spinner;
 	Spinner spinner2;
+	
 	
 	private ViewGroup mContainerView;
 	private ViewGroup mContainerView2;
@@ -44,7 +46,7 @@ public class MainActivity extends Activity {
 		adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		spinner2.setAdapter(adapter2);
 		
-		//set up skill container
+		//set up skill/job containers
 		mContainerView = (ViewGroup) findViewById(R.id.container);
 		mContainerView2 = (ViewGroup) findViewById(R.id.container2);
 		
@@ -123,6 +125,37 @@ public class MainActivity extends Activity {
 		GeneralDate gradDate = new GeneralDate(gradMonthInt,gradYearInt);
 		Degree degree = new Degree(editSchool.getText().toString(), editMajor.getText().toString(), editGPA.getText().toString(), lev, gradDate);
 		Profile.getInstance().setCurrentDegree(degree);
+		
+		//parse skills
+		View a;
+		ViewGroup b;
+		Profile.getInstance().emptySkills();
+		for(int i =0; i < mContainerView.getChildCount(); i++){
+			a = mContainerView.getChildAt(i);
+			if (a instanceof ViewGroup){
+				b = (ViewGroup)a;
+				String skillName  = ((EditText)b.findViewById(R.id.skillName)).getText().toString();
+				int skillRating = Integer.parseInt(((EditText)b.findViewById(R.id.skillRating)).getText().toString());
+				Skill newSkill = new Skill(skillName, skillRating);
+				Profile.getInstance().addSkill(newSkill);
+			}
+		}
+		
+		//parse jobs
+		View aa;
+		ViewGroup bb;
+		Profile.getInstance().emptyJobs();
+		for(int i=0; i<mContainerView2.getChildCount();i++){
+			aa = mContainerView2.getChildAt(i);
+			if(aa instanceof ViewGroup){
+				bb=(ViewGroup)aa;
+				String companyName  = ((EditText)bb.findViewById(R.id.companyNameField)).getText().toString();
+				String position = ((EditText)bb.findViewById(R.id.positionField)).getText().toString();
+				WorkExperience newWork = new WorkExperience(companyName, position);
+				Profile.getInstance().addJob(newWork);
+			}
+		}
+		
 		
 		//move to new activity and display profile info
 		Intent intent = new Intent(this, ViewProfileActivity.class);
