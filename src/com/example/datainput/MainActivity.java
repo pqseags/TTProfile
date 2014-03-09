@@ -1,11 +1,14 @@
 package com.example.datainput;
 
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -22,6 +25,9 @@ public class MainActivity extends Activity {
 	Spinner spinner;
 	Spinner spinner2;
 	
+	private ViewGroup mContainerView;
+	private ViewGroup mContainerView2;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -37,6 +43,11 @@ public class MainActivity extends Activity {
 		ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this, R.array.years_array, android.R.layout.simple_spinner_item);
 		adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		spinner2.setAdapter(adapter2);
+		
+		//set up skill container
+		mContainerView = (ViewGroup) findViewById(R.id.container);
+		mContainerView2 = (ViewGroup) findViewById(R.id.container2);
+		
 	}
 
 	@Override
@@ -44,6 +55,41 @@ public class MainActivity extends Activity {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
+	}
+	
+	public void addSkill(View view){
+		Log.d("Adding Skill","Adding Skill");
+		
+		final ViewGroup newView = (ViewGroup) LayoutInflater.from(this).inflate(R.layout.job_list_entry_item, mContainerView, false);
+		
+		newView.findViewById(R.id.delete_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+            	//remove view when clicking delete
+            	if (mContainerView.getChildCount() > 0)
+            		mContainerView.removeView(newView);
+            }
+																							});
+		//add the new view
+		mContainerView.addView(newView, 0);
+		
+	}
+	
+	public void addWork(View view){
+		Log.d("Adding Skill","Adding WORK");
+		
+		final ViewGroup newView = (ViewGroup) LayoutInflater.from(this).inflate(R.layout.work_list_entry_item, mContainerView2, false);
+		
+		newView.findViewById(R.id.delete_button2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+            	//remove view when clicking delete
+            	if (mContainerView2.getChildCount() > 0)
+            		mContainerView2.removeView(newView);
+            }
+																							});
+		//add the new view
+		mContainerView2.addView(newView, 0);
 	}
 	
 	public void inputData(View view){
@@ -84,11 +130,6 @@ public class MainActivity extends Activity {
 
 	}
 	
-//    private void tToast(String s) {
-//        Context context = getApplicationContext();
-//        int duration = Toast.LENGTH_LONG;
-//        Toast toast = Toast.makeText(context, s, duration);
-//        toast.show();
-//    }
+
 
 }
