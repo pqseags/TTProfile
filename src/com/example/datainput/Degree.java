@@ -10,6 +10,9 @@ public class Degree {
 	GeneralDate graduationDate;
 	String major;
 	String GPA;
+
+	
+	public final int SPINNER_OFFPUT = 2014;
 	
 	Degree(String name, String major, String gpa, String level, GeneralDate date){
 		Log.d("DegreeFormulation", "Just making it");

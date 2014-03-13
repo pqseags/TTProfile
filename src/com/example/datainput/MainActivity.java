@@ -1,6 +1,8 @@
 package com.example.datainput;
 
 
+import com.example.datainput.Degree.DegreeLevel;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -35,6 +37,8 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
+		
+		//-----------------CREATE STRUCTURE
 		//create spinners
 		spinner = (Spinner) findViewById(R.id.monthSpinner);
 		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.months_array, android.R.layout.simple_spinner_item);
@@ -49,6 +53,81 @@ public class MainActivity extends Activity {
 		//set up skill/job containers
 		mContainerView = (ViewGroup) findViewById(R.id.container);
 		mContainerView2 = (ViewGroup) findViewById(R.id.container2);
+		
+		
+		//++++++++v+++++++++v++++++v++++++++++ADD DATA++++++++++v+++++++++++v+++++++++++++v++++++++
+		
+		//display name
+				
+				
+				String firstName= Profile.getInstance().getFirstName();
+				EditText firstNameField = (EditText) findViewById(R.id.firstNameField);
+				firstNameField.setText(firstName);
+				
+				String lastName = Profile.getInstance().getLastName();
+				EditText lastNameField = (EditText) findViewById(R.id.lastNameField);
+				lastNameField.setText(lastName);
+				
+			//display phone number
+				String phone = Profile.getInstance().getPhoneNumber();
+				EditText phoneField = (EditText)findViewById(R.id.phoneNumberField);
+				phoneField.setText(phone);
+				
+				if(Profile.getInstance().getCurrentDegree()!=null){
+//				
+//			//display degree
+				String schoolName = Profile.getInstance().getCurrentDegree().schoolName;
+				EditText schoolNameDisplay =(EditText)findViewById(R.id.schoolField);
+				schoolNameDisplay.setText(schoolName);
+			
+				
+				DegreeLevel deg = Profile.getInstance().getCurrentDegree().degreeLevel;
+				RadioGroup degreeLevelRadio = (RadioGroup)findViewById(R.id.degreeGroup);
+				RadioButton RB;
+				if (deg.equals(DegreeLevel.bachelors))
+					degreeLevelRadio.check(((RadioButton) degreeLevelRadio.findViewById(R.id.B1)).getId());
+				else if (deg.equals(DegreeLevel.masters))
+					degreeLevelRadio.check(((RadioButton) degreeLevelRadio.findViewById(R.id.M2)).getId());
+				else if (deg.equals(DegreeLevel.phd))
+					degreeLevelRadio.check(((RadioButton) degreeLevelRadio.findViewById(R.id.P3)).getId());
+				
+				
+			
+				String major = (Profile.getInstance().getCurrentDegree().major);
+				EditText majorDisplay =(EditText)findViewById(R.id.majorField);
+				majorDisplay.setText(major);
+				
+			//display graduation date
+				spinner.setSelection((Profile.getInstance().getCurrentDegree().graduationDate.month)-1);
+				spinner2.setSelection((Profile.getInstance().getCurrentDegree().graduationDate.year)-(Profile.getInstance().getCurrentDegree().SPINNER_OFFPUT));
+				
+			//display gpa
+				String gpa = (Profile.getInstance().getCurrentDegree().GPA);
+				EditText gpaDisplay =(EditText)findViewById(R.id.gpaField);
+				gpaDisplay.setText(gpa);
+
+			}	
+			//display Skills
+				//mContainerView = (ViewGroup) findViewById(R.id.container);
+				for(Skill s : Profile.getInstance().getSkills()){
+					final ViewGroup newView = (ViewGroup) LayoutInflater.from(this).inflate(R.layout.job_list_entry_item, mContainerView, false);
+					((EditText) newView.findViewById(R.id.skillName)).setText(s.skillName);
+					((EditText) newView.findViewById(R.id.skillRating)).setText(Integer.toString(s.rating));
+					mContainerView.addView(newView, 0);
+				}
+				
+			//display jobs
+				//mContainerView2=(ViewGroup)findViewById(R.id.jobContainer);
+				for(WorkExperience w : Profile.getInstance().getJobs()){
+					final ViewGroup newView = (ViewGroup) LayoutInflater.from(this).inflate(R.layout.work_list_entry_item, mContainerView2, false);
+					((EditText) newView.findViewById(R.id.companyNameField)).setText(w.company);
+					((EditText) newView.findViewById(R.id.positionField)).setText(w.position);
+					mContainerView2.addView(newView, 0);
+					
+				}
+		
+				
+				//++++^+++++++++++++^++++++++++^+++++++ADD DATA++++++++^+++++++++++^+++++++++++++++^++++++++
 		
 	}
 
@@ -92,6 +171,23 @@ public class MainActivity extends Activity {
 																							});
 		//add the new view
 		mContainerView2.addView(newView, 0);
+		
+		//format the spinners
+		Spinner startMonthSpinner = (Spinner) newView.findViewById(R.id.startWorkMonthSpinner);
+		Spinner startYearSpinner = (Spinner) newView.findViewById(R.id.startWorkYearSpinner);
+		Spinner endMonthSpinner = (Spinner) newView.findViewById(R.id.endWorkMonthSpinner);
+		Spinner endYearSpinner = (Spinner) newView.findViewById(R.id.endWorkYearSpinner);
+		
+		ArrayAdapter<CharSequence> monthAdapter = ArrayAdapter.createFromResource(this, R.array.months_array, android.R.layout.simple_spinner_item);
+		monthAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		startMonthSpinner.setAdapter(monthAdapter);
+		endMonthSpinner.setAdapter(monthAdapter);
+		
+		ArrayAdapter<CharSequence> yearAdapter = ArrayAdapter.createFromResource(this, R.array.years_array, android.R.layout.simple_spinner_item);
+		yearAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		startYearSpinner.setAdapter(yearAdapter);
+		endYearSpinner.setAdapter(yearAdapter);
+
 	}
 	
 	public void inputData(View view){

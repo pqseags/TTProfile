@@ -37,8 +37,8 @@ public final class R {
         public static final int B1=0x7f0a000a;
         public static final int M2=0x7f0a000b;
         public static final int P3=0x7f0a000c;
-        public static final int action_settings=0x7f0a002a;
-        public static final int companyNameDisplay=0x7f0a0028;
+        public static final int action_settings=0x7f0a002e;
+        public static final int companyNameDisplay=0x7f0a002c;
         public static final int companyNameField=0x7f0a0025;
         public static final int container=0x7f0a0015;
         public static final int container2=0x7f0a0016;
@@ -49,6 +49,8 @@ public final class R {
         public static final int delete_button2=0x7f0a0027;
         public static final int edit_button=0x7f0a0017;
         public static final int emailField=0x7f0a001a;
+        public static final int endWorkMonthSpinner=0x7f0a002a;
+        public static final int endWorkYearSpinner=0x7f0a002b;
         public static final int firstNameField=0x7f0a0001;
         public static final int firstNameLabel=0x7f0a0000;
         public static final int gpaField=0x7f0a0013;
@@ -64,7 +66,7 @@ public final class R {
         public static final int nameDisplay=0x7f0a0019;
         public static final int phoneNumberField=0x7f0a0005;
         public static final int phoneNumberLabel=0x7f0a0004;
-        public static final int positionDisplay=0x7f0a0029;
+        public static final int positionDisplay=0x7f0a002d;
         public static final int positionField=0x7f0a0026;
         public static final int schoolField=0x7f0a0007;
         public static final int schoolLabel=0x7f0a0006;
@@ -75,6 +77,8 @@ public final class R {
         public static final int skillRating=0x7f0a0021;
         public static final int skillRatingField=0x7f0a0024;
         public static final int skillsHeader=0x7f0a0014;
+        public static final int startWorkMonthSpinner=0x7f0a0028;
+        public static final int startWorkYearSpinner=0x7f0a0029;
         public static final int user_image=0x7f0a0018;
         public static final int yearSpinner=0x7f0a000f;
     }

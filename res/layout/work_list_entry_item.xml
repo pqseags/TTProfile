@@ -44,12 +44,12 @@
 			  	android:layout_width = "0dp"
 			   	android:text="Start"/> 
     		 <Spinner 
-			       	android:id="@id/monthSpinner"
+			       	android:id="@+id/startWorkMonthSpinner"
 			       	android:layout_weight = "1"
 			       	android:layout_height = "wrap_content"
 			       	android:layout_width = "0dp"/>
     		 <Spinner
-			      	android:id="@id/yearSpinner"
+			      	android:id="@+id/startWorkYearSpinner"
 			      	android:layout_weight = "1"
 			       	android:layout_height = "wrap_content"
 			       	android:layout_width = "0dp"/>
@@ -59,12 +59,12 @@
 			  	android:layout_width = "0dp"
 			   	android:text="End"/>
 			<Spinner 
-			       	android:id="@id/monthSpinner"
+			       	android:id="@+id/endWorkMonthSpinner"
 			       	android:layout_weight = "1"
 			       	android:layout_height = "wrap_content"
 			       	android:layout_width = "0dp"/>
     		 <Spinner
-			      	android:id="@id/yearSpinner"
+			      	android:id="@+id/endWorkYearSpinner"
 			      	android:layout_weight = "1"
 			       	android:layout_height = "wrap_content"
 			       	android:layout_width = "0dp"/>

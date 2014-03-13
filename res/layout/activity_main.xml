@@ -3,269 +3,291 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
+
     <TextView
-        android:layout_width = "match_parent"
-        android:layout_height = "wrap_content"
-        android:text = "Please enter your information to build your profile and help you find matches!"
-        android:layout_margin = "10dp"
-        android:background="@color/orange" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@color/orange"
+        android:text="Please enter your information to build your profile and help you find matches!" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
+
         <LinearLayout
-        android:layout_width = "match_parent"
-        android:layout_height = "match_parent"
-        android:orientation = "vertical" >
-   	<TextView
-	    android:layout_width = "wrap_content"
-	    android:layout_height = "wrap_content"
-	    android:layout_margin = "5dp"
-	    android:textStyle = "bold"
-	    android:text = "Personal" />
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height ="wrap_content">
-    	<TextView 
-       		android:id = "@+id/firstNameLabel"
-       		android:layout_width = "wrap_content"
-       		android:layout_height = "wrap_content"
-       		android:layout_margin = "10dp"
-       	 	android:text = "First Name:"/>
-    	<EditText
-    	    android:id= "@+id/firstNameField"
-       		android:layout_toRightOf="@+id/firstNameLabel"
-        	android:layout_width="fill_parent"
-        	android:layout_height="wrap_content" />
-    </RelativeLayout>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height ="wrap_content">
-    	<TextView 
-       		android:id = "@+id/lastNameLabel"
-       		android:layout_width = "wrap_content"
-       		android:layout_height = "wrap_content"
-       		android:layout_margin = "10dp"
-       	 	android:text = "Last Name:"/>
-    
-    	<EditText
-    	    android:id= "@+id/lastNameField"
-       		android:layout_toRightOf="@+id/lastNameLabel"
-        	android:layout_width="fill_parent"
-        	android:layout_height="wrap_content"
-        />
-    </RelativeLayout>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height ="wrap_content">
-    	<TextView 
-       		android:id = "@+id/phoneNumberLabel"
-       		android:layout_width = "wrap_content"
-       		android:layout_height = "wrap_content"
-       		android:layout_margin = "10dp"
-       	 	android:text = "Phone Number:"/>
-    
-    	<EditText
-    	    android:id="@+id/phoneNumberField"
-       		android:layout_toRightOf="@+id/phoneNumberLabel"
-        	android:layout_width="fill_parent"
-        	android:layout_height="wrap_content"
-        />
-    </RelativeLayout>
-	<TextView
-	    android:layout_width = "wrap_content"
-	    android:layout_height = "wrap_content"
-	    android:layout_margin = "5dp"
-	    android:textStyle = "bold"
-	    android:text = "Current Degree"
-	 />
-	
-     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height ="wrap_content">
-    	<TextView 
-       		android:id = "@+id/schoolLabel"
-       		android:layout_width = "wrap_content"
-       		android:layout_height = "wrap_content"
-       		android:layout_margin = "10dp"
-       	 	android:text = "School:"/>
-    
-    	<EditText
-    	    android:id="@+id/schoolField"
-       		android:layout_toRightOf="@+id/schoolLabel"
-        	android:layout_width="fill_parent"
-        	android:layout_height="wrap_content"/>
-    </RelativeLayout>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height ="wrap_content">
-    	<TextView 
-       		android:id = "@+id/degreeLabel"
-       		android:layout_width = "wrap_content"
-       		android:layout_height = "wrap_content"
-       		android:layout_margin = "10dp"
-       	 	android:text = "Degree:"/>
-    	<RadioGroup
-    	   android:id="@+id/degreeGroup"
-    	   android:layout_toRightOf="@+id/degreeLabel"
-    	   android:layout_width="fill_parent" 
-		   android:layout_height="wrap_content"
-		   android:orientation = "horizontal">
-    	    <RadioButton
-    	        android:id="@+id/B1"
-    	        android:layout_width = "wrap_content"
-    	        android:layout_height = "wrap_content"
-    	        android:text = "BA/BS"/>
-    	    <RadioButton
-    	        android:id="@+id/M2"
-    	        android:layout_width = "wrap_content"
-    	        android:layout_height = "wrap_content"
-    	        android:text = "Masters" />
-    	    <RadioButton
-    	        android:id="@+id/P3"
-    	        android:layout_width = "wrap_content"
-    	        android:layout_height = "wrap_content"
-    	        android:text = "PhD"/>
-    	</RadioGroup>
-    </RelativeLayout>
-    
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height ="wrap_content">
-    	<TextView 
-       		android:id = "@+id/graduationLabel"
-       		android:layout_width = "wrap_content"
-       		android:layout_height = "wrap_content"
-       		android:layout_margin = "10dp"
-       	 	android:text = "Graduation:"/>
-		<LinearLayout
-		    android:layout_toRightOf="@+id/graduationLabel"
-		    android:orientation = "horizontal"
-		    android:layout_height = "wrap_content"
-		    android:layout_width = "fill_parent">
-		    <Spinner 
-		       	android:id="@+id/monthSpinner"
-		       	android:layout_weight = "1"
-		       	android:layout_height = "wrap_content"
-		       	android:layout_width = "0dp"/>
-		    <Spinner
-		      	android:id="@+id/yearSpinner"
-		      	android:layout_weight = "1"
-		       	android:layout_height = "wrap_content"
-		       	android:layout_width = "0dp"/>
-		</LinearLayout>
-		
-    </RelativeLayout>
-    
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height ="wrap_content">
-    	<TextView 
-       		android:id = "@+id/majorLabel"
-       		android:layout_width = "wrap_content"
-       		android:layout_height = "wrap_content"
-       		android:layout_margin = "10dp"
-       	 	android:text = "Major:"/>
-    
-    	<EditText
-    	    android:id = "@+id/majorField"
-       		android:layout_toRightOf="@+id/majorLabel"
-        	android:layout_width="fill_parent"
-        	android:layout_height="wrap_content"
-        />
-    </RelativeLayout>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height ="wrap_content">
-    	<TextView 
-       		android:id = "@+id/gpaLabel"
-       		android:layout_width = "wrap_content"
-       		android:layout_height = "wrap_content"
-       		android:layout_margin = "10dp"
-       	 	android:text = "GPA:"/>
-    
-    	<EditText
-    	    android:id = "@+id/gpaField"
-       		android:layout_toRightOf="@+id/gpaLabel"
-        	android:layout_width="fill_parent"
-        	android:layout_height="wrap_content"
-        />
-    </RelativeLayout>
-    
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
-   		<TextView android:id="@+id/skillsHeader"
-	   	 	android:layout_width = "wrap_content"
-	    	android:layout_height = "wrap_content"
-	    	android:layout_margin = "5dp"
-	    	android:textStyle = "bold"
-	    	android:text = "Skills"
-	 	/>
-   		<Button
-   		    android:layout_toRightOf="@+id/skillsHeader"
-			android:layout_width = "20dp"
-	    	android:layout_height = "20dp"
-   	    	android:text = "+"
-   	    	android:background = "@drawable/roundedbutton"
-   	    	android:textStyle="bold"
-   	    	android:textColor="#ffffff"
-   	    	android:onClick="addSkill"
-   	    />
-   	</RelativeLayout>
-   	
-    <ScrollView android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <LinearLayout android:id="@+id/container"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:animateLayoutChanges="true" />
-    </ScrollView>
-   
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
-   		<TextView android:id="@+id/skillsHeader"
-	   	 	android:layout_width = "wrap_content"
-	    	android:layout_height = "wrap_content"
-	    	android:layout_margin = "5dp"
-	    	android:textStyle = "bold"
-	    	android:text = "Work Experience"
-	 	/>
-   		<Button
-   		    android:layout_toRightOf="@+id/skillsHeader"
-			android:layout_width = "20dp"
-	    	android:layout_height = "20dp"
-   	    	android:text = "+"
-   	    	android:background = "@drawable/roundedbutton"
-   	    	android:textStyle="bold"
-   	    	android:textColor="#ffffff"
-   	    	android:onClick="addWork"
-   	    />
-   	</RelativeLayout>
-   	
-    <ScrollView android:layout_width="match_parent"
-        android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
 
-        <LinearLayout android:id="@+id/container2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:animateLayoutChanges="true" />
-    </ScrollView>
-    
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="Personal"
+                android:textStyle="bold" />
 
-   	<Button 
-   		android:layout_width="match_parent"
-   		android:layout_height="wrap_content"
-   		android:background="@color/orange"  
-   		android:text="Update Info"  
-   		android:onClick="inputData"
-   		/>
-   	
-	</LinearLayout>
-	</ScrollView>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/firstNameLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="First Name:" />
+
+                <EditText
+                    android:id="@+id/firstNameField"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/firstNameLabel" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/lastNameLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="Last Name:" />
+
+                <EditText
+                    android:id="@+id/lastNameField"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/lastNameLabel" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/phoneNumberLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="Phone Number:" />
+
+                <EditText
+                    android:id="@+id/phoneNumberField"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/phoneNumberLabel" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="Current Degree"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/schoolLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="School:" />
+
+                <EditText
+                    android:id="@+id/schoolField"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/schoolLabel" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/degreeLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="Degree:" />
+
+                <RadioGroup
+                    android:id="@+id/degreeGroup"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/degreeLabel"
+                    android:orientation="horizontal" >
+
+                    <RadioButton
+                        android:id="@+id/B1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="BA/BS" />
+
+                    <RadioButton
+                        android:id="@+id/M2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Masters" />
+
+                    <RadioButton
+                        android:id="@+id/P3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="PhD" />
+                </RadioGroup>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/graduationLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="Graduation:" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/graduationLabel"
+                    android:orientation="horizontal" >
+
+                    <Spinner
+                        android:id="@+id/monthSpinner"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <Spinner
+                        android:id="@+id/yearSpinner"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/majorLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="Major:" />
+
+                <EditText
+                    android:id="@+id/majorField"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/majorLabel" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/gpaLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="GPA:" />
+
+                <EditText
+                    android:id="@+id/gpaField"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/gpaLabel" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/skillsHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="Skills"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_toRightOf="@+id/skillsHeader"
+                    android:background="@drawable/roundedbutton"
+                    android:onClick="addSkill"
+                    android:text="+"
+                    android:textColor="#ffffff"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <LinearLayout
+                    android:id="@+id/container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:animateLayoutChanges="true"
+                    android:orientation="vertical" />
+            </ScrollView>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/skillsHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="Work Experience"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_toRightOf="@+id/skillsHeader"
+                    android:background="@drawable/roundedbutton"
+                    android:onClick="addWork"
+                    android:text="+"
+                    android:textColor="#ffffff"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <LinearLayout
+                    android:id="@+id/container2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:animateLayoutChanges="true"
+                    android:orientation="vertical" />
+            </ScrollView>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/orange"
+                android:onClick="inputData"
+                android:text="Update Info" />
+        </LinearLayout>
+    </ScrollView>
+
 </LinearLayout>
